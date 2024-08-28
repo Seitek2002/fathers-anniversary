@@ -3,6 +3,15 @@
 body {
   margin: 0;
   font-family: 'Montserrat';
+  background: #f6f0eb;
+}
+
+.blue {
+    color: rgb(117, 167, 242);
+}
+
+.white {
+    color: #fff;
 }
 
 .container {
@@ -67,3 +76,49 @@ img {
     }
   }
 }
+
+.welcome {
+    text-align: center;
+
+    h2 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 28px;
+    }
+}
+
+.address {
+    background: black;
+    text-align: center;
+    color: white;
+    padding: 30px 0;
+
+    img {
+        border-radius: 15px;
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    h3 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 30px;
+
+        .address-span {
+            color: darkcyan;
+        }
+    }
+
+    a {
+        color: yellow;
+        font-size: 20px;
+    }
+}
+
