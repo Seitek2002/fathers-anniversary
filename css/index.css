@@ -16,16 +16,27 @@ img {
 .header__content {
   position: relative;
 }
-.header__content img {
+.header__item {
+  border-radius: 15px;
+  overflow: hidden;
+  max-height: 80vh;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgb(0, 0, 0) 100%);
+}
+.header__item img {
   position: relative;
   z-index: -1;
   max-height: 100%;
 }
-.header__item {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.9) 100%);
-  border-radius: 15px;
-  overflow: hidden;
-  max-height: 80vh;
+@media screen and (max-width: 476px) {
+  .header__item img {
+    min-height: 100%;
+    object-fit: cover;
+  }
+}
+@media screen and (max-width: 476px) {
+  .header__item {
+    max-height: 99vh;
+  }
 }
 .header__info {
   position: absolute;

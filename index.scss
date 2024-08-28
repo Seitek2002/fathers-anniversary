@@ -17,19 +17,28 @@ img {
 .header {
     &__content {
         position: relative;
+    }
+
+    &__item {
+        border-radius: 15px;
+        overflow: hidden;
+        max-height: 80vh;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 1) 100%);
 
         img {
             position: relative;
             z-index: -1;
             max-height: 100%;
-        }
-    }
 
-    &__item {
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.9) 100%);
-        border-radius: 15px;
-        overflow: hidden;
-        max-height: 80vh;
+            @media screen and (max-width: 476px) {
+                min-height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        @media screen and (max-width: 476px) {
+            max-height: 99vh;
+        }
     }
 
     &__info {
