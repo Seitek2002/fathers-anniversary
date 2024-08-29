@@ -60,7 +60,8 @@
             <div class="welcome__content">
                 <h2>Урматтуу коноктор</h2>
                 <p>
-                    Сиздерди Бегалиев Улугбектин <strong>50 жылдык юбилейине</strong> кадырлуу коногубуз болууга чакырабыз
+                    Сиздерди Бегалиев Улугбектин <strong>50 жылдык юбилейине</strong> кадырлуу коногубуз болууга
+                    чакырабыз
                 </p>
             </div>
         </div>
@@ -89,7 +90,8 @@
                 </p>
                 <div>
                     <a href="https://go.2gis.com/3hbj0">
-                        <img src="https://optim.tildacdn.pub/tild3837-3733-4032-b462-636331613931/-/resize/240x/-/format/webp/image.png" alt="">
+                        <img src="https://optim.tildacdn.pub/tild3837-3733-4032-b462-636331613931/-/resize/240x/-/format/webp/image.png"
+                            alt="">
                         <br>
                         2GIS шилтемеси
                     </a>
@@ -97,6 +99,56 @@
             </div>
         </div>
     </section>
+
+    <form id="telegramForm">
+        <input type="text" id="text1">
+        <input type="text" id="text2">
+        <input type="checkbox" id="chbox">
+        <button type="submit">Отправить</button>
+    </form>
+
+
+    <script>
+        const telegramForm = document.getElementById('telegramForm');
+        const textInput1 = document.getElementById('text1');
+        const textInput2 = document.getElementById('text2');
+        const checkboxInput = document.getElementById('chbox');
+
+        telegramForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Предотвращаем стандартную отправку формы
+
+            const text1 = textInput1.value;
+            const text2 = textInput2.value;
+            const check_state = checkboxInput.value;
+            const token = 'В7182997455:AAE3x3tfHXi3hi3oLK4xCcUDaoCThUY2Cac';
+            const chatId = '1025323599';
+
+            const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: `Text1: ${text1}\n Text2: ${text2}\n Checkbox: ${check_state}`
+                })
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Сообщение отправлено!');
+                        messageInput.value = ''; // Очищаем поле ввода
+                    } else {
+                        alert('Ошибка при отправке сообщения.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                    alert('Ошибка при отправке сообщения.');
+                });
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./index.js"></script>
