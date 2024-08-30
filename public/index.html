@@ -116,7 +116,7 @@
         telegramForm.addEventListener('submit', (event) => {
             event.preventDefault();
 
-            fetch('/.netlify/functions/send-message', {
+            fetch('https://master--fathers-aniversary.netlify.app/.netlify/functions/send-message', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

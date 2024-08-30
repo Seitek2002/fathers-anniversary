@@ -10,7 +10,7 @@ exports.handler = async function (event, context) {
       `https://api.telegram.org/bot${token}/sendMessage`,
       {
         chat_id: chatId,
-        text: JSON.stringify(`Text1: ${text1}\nText2: ${text2}\nCheckbox: ${check_state}`),
+        text: `Text1: ${text1}\nText2: ${text2}\nCheckbox: ${check_state}`,
       }
     );
     return {
