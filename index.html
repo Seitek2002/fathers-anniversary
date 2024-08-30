@@ -17,7 +17,7 @@
                     <p>чакыруу</p>
                 </div>
                 <div class="header__item">
-                    <video src="./imgs/video.mp4" autoplay="true" preload="auto" no-controls loop playsinline
+                    <video id="video" src="./imgs/video.mp4" autoplay="true" preload="auto" no-controls loop playsinline
                         muted></video>
                 </div>
             </div>
@@ -121,6 +121,7 @@
                 },
             })
         })
+        document.getElementById('video').play();
     </script>
 </body>
 
