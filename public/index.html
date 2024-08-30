@@ -116,7 +116,7 @@
         telegramForm.addEventListener('submit', (event) => {
             event.preventDefault();
 
-            fetch('https://master--fathers-aniversary.netlify.app/.netlify/functions/send-message', {
+            fetch('/.netlify/functions/send-message', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -126,7 +126,6 @@
                     text2: textInput2.value,
                     check_state: checkboxInput.checked
                 }),
-                mode: 'no-cors'
             })
                 .then(response => response.text())
                 .then(data => {
