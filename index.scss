@@ -151,10 +151,15 @@ img {
     border: none;
   }
 
-  label {
+  .checkboxes {
     display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: space-evenly;
+
+    label {
+      display: flex;
+      align-items: center;
+    }
   }
 
   button {

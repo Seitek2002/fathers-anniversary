@@ -131,10 +131,14 @@ img {
   border-radius: 15px;
   border: none;
 }
-.form label {
+.form .checkboxes {
   display: flex;
   align-items: center;
-  gap: 5px;
+  justify-content: space-evenly;
+}
+.form .checkboxes label {
+  display: flex;
+  align-items: center;
 }
 .form button {
   background: #000;
