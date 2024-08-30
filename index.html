@@ -107,13 +107,13 @@
             })
         })
 
-        //710501347
+        //1025323599
 
         telegramForm.addEventListener('submit', () => {
             fetch('https://api.telegram.org/bot7182997455:AAE3x3tfHXi3hi3oLK4xCcUDaoCThUY2Cac/sendMessage', {
                 method: 'POST',
                 body: JSON.stringify({
-                    chat_id: "1025323599",
+                    chat_id: "710501347",
                     text: `ФИО: ${textInput1.value} \nФИО: ${textInput3.value} \nСообщение: ${textInput2.value} \nЖооб: ${answer}`,
                 }),
                 headers: {
