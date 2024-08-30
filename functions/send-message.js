@@ -15,12 +15,20 @@ exports.handler = async function (event, context) {
     );
     return {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*', // Разрешение запросов с любых источников
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'POST',
+      },
       body: 'Сообщение отправлено!',
     };
   } catch (error) {
     console.error(error);
     return {
       statusCode: 500,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
       body: 'Ошибка при отправке сообщения.',
     };
   }
