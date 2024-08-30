@@ -42,6 +42,16 @@ img {
     min-height: 100%;
   }
 }
+.header__item video {
+  max-width: 100%;
+  position: relative;
+  z-index: -1;
+}
+@media screen and (max-width: 476px) {
+  .header__item video {
+    min-height: 100%;
+  }
+}
 @media screen and (max-width: 476px) {
   .header__item {
     max-height: 99vh;

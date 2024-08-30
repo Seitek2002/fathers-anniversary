@@ -49,6 +49,16 @@ img {
       }
     }
 
+    video {
+      max-width: 100%;
+      position: relative;
+      z-index: -1;
+
+      @media screen and (max-width: 476px) {
+        min-height: 100%;
+      }
+    }
+
     @media screen and (max-width: 476px) {
       max-height: 99vh;
     }
