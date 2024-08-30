@@ -115,7 +115,8 @@ img {
   gap: 20px;
 }
 .form .text1,
-.form .text2 {
+.form .text2,
+.form .text3 {
   padding: 5px;
   border-radius: 15px;
   border: none;
