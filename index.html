@@ -67,6 +67,19 @@
         </div>
     </section>
 
+    <section class="form">
+        <form class="telegramForm">
+            <input type="text" class="text1" placeholder="ФИО">
+            <input type="text" class="text3" placeholder="ФИО">
+            <input type="text" class="text2" placeholder="Сообщение">
+            <label for="chbox">
+                Келесизби?:
+                <input type="checkbox" class="chbox" id="chbox">
+            </label>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+
     <section class="address">
         <div class="container">
             <div class="address__content">
@@ -100,22 +113,11 @@
         </div>
     </section>
 
-    <section class="form">
-        <form class="telegramForm">
-            <input type="text" class="text1" placeholder="ФИО">
-            <input type="text" class="text2" placeholder="Сообщение">
-            <label for="chbox">
-                Келесизби?:
-                <input type="checkbox" class="chbox" id="chbox">
-            </label>
-            <button type="submit">Отправить</button>
-        </form>
-    </section>
-
     <script>
         const telegramForm = document.querySelector('.telegramForm');
         const textInput1 = document.querySelector('.text1');
         const textInput2 = document.querySelector('.text2');
+        const textInput3 = document.querySelector('.text3');
         const checkboxInput = document.querySelector('.chbox');
 
         //1025323599
@@ -125,7 +127,7 @@
                 method: 'POST',
                 body: JSON.stringify({
                     chat_id: "710501347",
-                    text: `ФИО: ${textInput1.value} \nСообщение: ${textInput2.value} \n ${checkboxInput.checked ? 'Ооба' : 'Жок'}`,
+                    text: `ФИО: ${textInput1.value} \nФИО: ${textInput3.value} \nСообщение: ${textInput2.value} \n ${checkboxInput.checked ? 'Ооба' : 'Жок'}`,
                 }),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
