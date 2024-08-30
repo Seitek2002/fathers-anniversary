@@ -1,56 +1,124 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-    margin: 0;
-    font-family: "Montserrat";
+  margin: 0;
+  font-family: 'Montserrat';
+  background: #f6f0eb;
+}
+
+.blue {
+    color: rgb(117, 167, 242);
+}
+
+.white {
+    color: #fff;
 }
 
 .container {
-    max-width: 476px;
-    margin: 0 auto;
+  max-width: 476px;
+  margin: 0 auto;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .header {
-    &__content {
-        position: relative;
+  &__content {
+    position: relative;
+  }
 
-        img {
-            position: relative;
-            z-index: -1;
-            max-height: 100%;
-        }
+  &__item {
+    border-radius: 15px;
+    overflow: hidden;
+    max-height: 80vh;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 1) 100%
+    );
+
+    img {
+      position: relative;
+      z-index: -1;
+      max-height: 100%;
+      object-fit: cover;
+
+      @media screen and (max-width: 476px) {
+        min-height: 100%;
+      }
     }
 
-    &__item {
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.9) 100%);
-        border-radius: 15px;
-        overflow: hidden;
-        max-height: 80vh;
+    @media screen and (max-width: 476px) {
+      max-height: 99vh;
+    }
+  }
+
+  &__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 35px;
+    z-index: 2;
+    box-sizing: border-box;
+    text-align: center;
+
+    h1 {
+      color: rgb(117, 167, 242);
+      font-size: 40px;
+      margin: 0;
     }
 
-    &__info {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        padding: 35px;
-        z-index: 2;
-        box-sizing: border-box;
-        text-align: center;
+    p {
+      color: #fff;
+      font-size: 30px;
+      margin: 0;
+    }
+  }
+}
 
-        h1 {
-            color: rgb(117, 167, 242);
-            font-size: 40px;
-            margin: 0;
-        }
+.welcome {
+    text-align: center;
 
-        p {
-            color: #fff;
-            font-size: 30px;
-            margin: 0;
-        }
+    h2 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 28px;
     }
 }
+
+.address {
+    background: black;
+    text-align: center;
+    color: white;
+    padding: 30px 0;
+
+    img {
+        border-radius: 15px;
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    h3 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 30px;
+
+        .address-span {
+            color: darkcyan;
+        }
+    }
+
+    a {
+        color: yellow;
+        font-size: 20px;
+    }
+}
+

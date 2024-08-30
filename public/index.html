@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__info">
+                    <h1>50 жылдык юбилейге</h1>
+                    <p>чакыруу</p>
+                </div>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="header__item">
+                                <img src="./imgs/main-photo-1.png" alt="main-photo">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="header__item">
+                                <img src="./imgs/main-photo-2.png" alt="main-photo">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="header__item">
+                                <img src="./imgs/main-photo-4.jpg" alt="main-photo">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="header__item">
+                                <img style="transform: rotate(90deg);" src="./imgs/main-photo-5.png" alt="main-photo">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="header__item">
+                                <img src="./imgs/main-photo-6.png" alt="main-photo">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="header__item">
+                                <img src="./imgs/main-photo-7.PNG" alt="main-photo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="welcome">
+        <div class="container">
+            <div class="welcome__content">
+                <h2>Урматтуу коноктор</h2>
+                <p>
+                    Сиздерди Бегалиев Улугбектин <strong>50 жылдык юбилейине</strong> кадырлуу коногубуз болууга
+                    чакырабыз
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="address">
+        <div class="container">
+            <div class="address__content">
+                <h2>
+                    <span class="blue">10-сентябрь</span>
+                    <br>
+                    <span class="white">Саат 18:00</span>
+                </h2>
+                <div>
+                    <img src="./imgs/banquet-img.jpg" alt="banquet-img">
+                </div>
+                <h3>
+                    'Алтын Арашан' <br>
+                    Banquet Hall
+                </h3>
+                <p>
+                    <span class="address-span">
+                        Дареги:
+                    </span>
+                    7-апрель көч. 7/2
+                </p>
+                <div>
+                    <a href="https://go.2gis.com/3hbj0">
+                        <img src="https://optim.tildacdn.pub/tild3837-3733-4032-b462-636331613931/-/resize/240x/-/format/webp/image.png"
+                            alt="">
+                        <br>
+                        2GIS шилтемеси
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <form id="telegramForm">
+        <input type="text" id="text1">
+        <input type="text" id="text2">
+        <input type="checkbox" id="chbox">
+        <button type="submit">Отправить</button>
+    </form>
+
+    <script>
+        const telegramForm = document.getElementById('telegramForm');
+        const textInput1 = document.getElementById('text1');
+        const textInput2 = document.getElementById('text2');
+        const checkboxInput = document.getElementById('chbox');
+
+        telegramForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            fetch('/.netlify/functions/send-message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    text1: textInput1.value,
+                    text2: textInput2.value,
+                    check_state: checkboxInput.checked
+                })
+            })
+                .then(response => response.text())
+                .then(data => alert(data))
+                .catch(error => console.error('Ошибка:', error));
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

@@ -2,6 +2,15 @@
 body {
   margin: 0;
   font-family: "Montserrat";
+  background: #f6f0eb;
+}
+
+.blue {
+  color: rgb(117, 167, 242);
+}
+
+.white {
+  color: #fff;
 }
 
 .container {
@@ -16,16 +25,27 @@ img {
 .header__content {
   position: relative;
 }
-.header__content img {
-  position: relative;
-  z-index: -1;
-  max-height: 100%;
-}
 .header__item {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.9) 100%);
   border-radius: 15px;
   overflow: hidden;
   max-height: 80vh;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgb(0, 0, 0) 100%);
+}
+.header__item img {
+  position: relative;
+  z-index: -1;
+  max-height: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 476px) {
+  .header__item img {
+    min-height: 100%;
+  }
+}
+@media screen and (max-width: 476px) {
+  .header__item {
+    max-height: 99vh;
+  }
 }
 .header__info {
   position: absolute;
@@ -45,4 +65,41 @@ img {
   color: #fff;
   font-size: 30px;
   margin: 0;
+}
+
+.welcome {
+  text-align: center;
+}
+.welcome h2 {
+  font-size: 40px;
+}
+.welcome p {
+  font-size: 28px;
+}
+
+.address {
+  background: black;
+  text-align: center;
+  color: white;
+  padding: 30px 0;
+}
+.address img {
+  border-radius: 15px;
+  max-width: 100%;
+}
+.address h2 {
+  font-size: 40px;
+}
+.address h3 {
+  font-size: 40px;
+}
+.address p {
+  font-size: 30px;
+}
+.address p .address-span {
+  color: darkcyan;
+}
+.address a {
+  color: yellow;
+  font-size: 20px;
 }/*# sourceMappingURL=index.css.map */
