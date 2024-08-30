@@ -128,7 +128,9 @@
                 })
             })
                 .then(response => response.text())
-                .then(data => alert(data))
+                .then(data => {
+                    console.log(data);
+                })
                 .catch(error => console.error('Ошибка:', error));
         });
     </script>
