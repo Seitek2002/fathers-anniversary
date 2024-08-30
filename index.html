@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
@@ -113,26 +113,18 @@
         const textInput2 = document.getElementById('text2');
         const checkboxInput = document.getElementById('chbox');
 
-        telegramForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-
-            fetch('/.netlify/functions/send-message', {
+        telegramForm.addEventListener('submit', () => {
+            fetch('https://api.telegram.org/bot7182997455:AAE3x3tfHXi3hi3oLK4xCcUDaoCThUY2Cac/sendMessage', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
                 body: JSON.stringify({
-                    text1: textInput1.value,
-                    text2: textInput2.value,
-                    check_state: checkboxInput.checked
+                    chat_id: "1025323599",
+                    text: `ФИО: ${textInput1.value} Сообщение ${textInput2.value} ${checkboxInput.checked}`,
                 }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
             })
-                .then(response => response.text())
-                .then(data => {
-                    console.log(data);
-                })
-                .catch(error => console.error('Ошибка:', error));
-        });
+        })
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
