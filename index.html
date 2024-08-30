@@ -17,7 +17,7 @@
                     <p>чакыруу</p>
                 </div>
                 <div class="header__item">
-                    <video id="video" src="./imgs/video.mp4" autoplay="true" preload="auto" no-controls loop playsinline
+                    <video src="./imgs/video.mp4" autoplay="true" preload="auto" no-controls loop playsinline
                         muted></video>
                 </div>
             </div>
@@ -107,13 +107,13 @@
             })
         })
 
-        //1025323599
+        //710501347
 
         telegramForm.addEventListener('submit', () => {
             fetch('https://api.telegram.org/bot7182997455:AAE3x3tfHXi3hi3oLK4xCcUDaoCThUY2Cac/sendMessage', {
                 method: 'POST',
                 body: JSON.stringify({
-                    chat_id: "710501347",
+                    chat_id: "1025323599",
                     text: `ФИО: ${textInput1.value} \nФИО: ${textInput3.value} \nСообщение: ${textInput2.value} \nЖооб: ${answer}`,
                 }),
                 headers: {
@@ -121,7 +121,6 @@
                 },
             })
         })
-        document.getElementById('video').play();
     </script>
 </body>
 
