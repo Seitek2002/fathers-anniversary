@@ -100,25 +100,30 @@
         </div>
     </section>
 
-    <form id="telegramForm">
-        <input type="text" id="text1">
-        <input type="text" id="text2">
-        <input type="checkbox" id="chbox">
-        <button type="submit">Отправить</button>
-    </form>
+    <section class="form">
+        <form class="telegramForm">
+            <input type="text" class="text1" placeholder="ФИО">
+            <input type="text" class="text2" placeholder="Сообщение">
+            <label for="chbox">
+                Келесизби?:
+                <input type="checkbox" class="chbox" id="chbox">
+            </label>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
 
     <script>
-        const telegramForm = document.getElementById('telegramForm');
-        const textInput1 = document.getElementById('text1');
-        const textInput2 = document.getElementById('text2');
-        const checkboxInput = document.getElementById('chbox');
+        const telegramForm = document.querySelector('.telegramForm');
+        const textInput1 = document.querySelector('.text1');
+        const textInput2 = document.querySelector('.text2');
+        const checkboxInput = document.querySelector('.chbox');
 
         telegramForm.addEventListener('submit', () => {
             fetch('https://api.telegram.org/bot7182997455:AAE3x3tfHXi3hi3oLK4xCcUDaoCThUY2Cac/sendMessage', {
                 method: 'POST',
                 body: JSON.stringify({
-                    chat_id: "1025323599",
-                    text: `ФИО: ${textInput1.value} Сообщение ${textInput2.value} ${checkboxInput.checked}`,
+                    chat_id: "710501347",
+                    text: `ФИО: ${textInput1.value} \nСообщение: ${textInput2.value} \n ${checkboxInput.checked ? 'Ооба' : 'Жок'}`,
                 }),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
