@@ -107,7 +107,6 @@
         <button type="submit">Отправить</button>
     </form>
 
-
     <script>
         const telegramForm = document.getElementById('telegramForm');
         const textInput1 = document.getElementById('text1');
@@ -115,38 +114,22 @@
         const checkboxInput = document.getElementById('chbox');
 
         telegramForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Предотвращаем стандартную отправку формы
+            event.preventDefault();
 
-            const text1 = textInput1.value;
-            const text2 = textInput2.value;
-            const check_state = checkboxInput.value;
-            const token = 'В7182997455:AAE3x3tfHXi3hi3oLK4xCcUDaoCThUY2Cac';
-            const chatId = '1025323599';
-
-            const url = `https://api.telegram.org/bot${token}/sendMessage`;
-
-            fetch(url, {
+            fetch('/.netlify/functions/send-message', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    chat_id: chatId,
-                    text: `Text1: ${text1}\n Text2: ${text2}\n Checkbox: ${check_state}`
+                    text1: textInput1.value,
+                    text2: textInput2.value,
+                    check_state: checkboxInput.checked
                 })
             })
-                .then(response => {
-                    if (response.ok) {
-                        alert('Сообщение отправлено!');
-                        messageInput.value = ''; // Очищаем поле ввода
-                    } else {
-                        alert('Ошибка при отправке сообщения.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Ошибка:', error);
-                    alert('Ошибка при отправке сообщения.');
-                });
+                .then(response => response.text())
+                .then(data => alert(data))
+                .catch(error => console.error('Ошибка:', error));
         });
     </script>
 
