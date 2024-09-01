@@ -110,8 +110,6 @@
         //1025323599
 
         telegramForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
             fetch('https://api.telegram.org/bot7182997455:AAE3x3tfHXi3hi3oLK4xCcUDaoCThUY2Cac/sendMessage', {
                 method: 'POST',
                 body: JSON.stringify({
@@ -122,6 +120,8 @@
                     'Content-type': 'application/json; charset=UTF-8',
                 },
             })
+
+            alert('Сообщение отправлено!')
         })
     </script>
 </body>
